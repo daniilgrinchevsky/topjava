@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark py-0">
     <div class="container">
-        <a href="WEB-INF/jsp/meals.jsp" class="navbar-brand"><img src="resources/images/icon-meal.png"> <spring:message code="app.title"/></a>
+        <a href="meals" class="navbar-brand"><img src="resources/images/icon-meal.png"> <spring:message code="app.title"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,9 +17,9 @@
                     <sec:authorize access="isAuthenticated()">
                         <form:form class="form-inline my-2" action="logout" method="post">
                             <sec:authorize access="hasRole('ROLE_ADMIN')">
-                                <a class="btn btn-info mr-1" href="WEB-INF/jsp/users.jsp"><spring:message code="user.title"/></a>
+                                <a class="btn btn-info mr-1" href="users"><spring:message code="user.title"/></a>
                             </sec:authorize>
-                            <a class="btn btn-info mr-1" href="WEB-INF/jsp/profile.jsp"><sec:authentication property="principal.userTo.name"/>
+                            <a class="btn btn-info mr-1" href="profile"><sec:authentication property="principal.userTo.name"/>
                                 <spring:message code="app.profile"/></a>
                             <button class="btn btn-primary" type="submit">
                                 <span class="fa fa-sign-out"></span>
