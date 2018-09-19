@@ -9,10 +9,7 @@ import ru.javawebinar.topjava.View;
 import ru.javawebinar.topjava.util.DateTimeUtil;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -35,7 +32,7 @@ public class Meal extends AbstractBaseEntity {
 
     @Column(name = "date_time", nullable = false)
     @NotNull
-    @Past
+    @PastOrPresent
     @DateTimeFormat(pattern = DateTimeUtil.DATE_TIME_PATTERN)
     private LocalDateTime dateTime;
 
